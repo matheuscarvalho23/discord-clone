@@ -18,7 +18,9 @@ export const Button = styled.button<Props>`
   position: relative;
   cursor: pointer;
 
-  border-radius: 50%;
+  border-radius: ${(props) =>
+    (props.selected) ? '16px' : '50%'
+  };
 
   > img {
     width: 24px;
@@ -39,6 +41,17 @@ export const Button = styled.button<Props>`
     display: ${(props) =>
       (props.hasNotification) ? 'inline' : 'none'
     };
+
+    transition: top .2s, height .2s;
+  }
+
+  &:hover:before {
+    width: 9px;
+    height: 20px;
+    border-radius: 25%;
+    top: calc(39% - 4.5px);
+
+    transition: top .2s, height .2s;
   }
 
   &::after {
@@ -62,7 +75,6 @@ export const Button = styled.button<Props>`
     content: '${(props) => (props.mentions) && props.mentions}';
     display: ${(props) => (props.mentions && props.mentions > 0) ? 'inline': 'none'};
   };
-
 
   transition: border-radius .3s, background-color .3s;
 

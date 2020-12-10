@@ -1,10 +1,14 @@
 import React from 'react';
 
-import { Container } from './style';
+import { Container, Title, ExpandIcon } from './style';
 
 const ServerName: React.FC = () => {
   return (
-    <Container />
+    <Container>
+      <Title>Matheus</Title>
+
+      <ExpandIcon />
+    </Container>
   );
 }
 
